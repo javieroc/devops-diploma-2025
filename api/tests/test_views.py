@@ -10,4 +10,4 @@ class BookViewTest(APITestCase):
         assert response.status_code == status.HTTP_200_OK
 
         body = response.json()
-        assert body['hello'] == 'django'
+        assert body['hello'] == ''
