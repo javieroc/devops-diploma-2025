@@ -1,0 +1,10 @@
+
+.git
+
+__pycache__/
+*.py[codz]
+*$py.class
+
+.venv
+
+db.sqlite3
