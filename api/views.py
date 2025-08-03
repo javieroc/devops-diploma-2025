@@ -7,7 +7,8 @@ from .serializers import BookSerializer
 class HealthView(APIView):
     def get(self, request, *args, **kwargs):
         return Response({
-            "status": "ok"
+            "status": "ok",
+            "message": "API is running smoothly"
         })
 
 health_view = HealthView.as_view()
