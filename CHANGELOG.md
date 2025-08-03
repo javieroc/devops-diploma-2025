@@ -1,3 +1,9 @@
+## [1.5.0](https://github.com/javieroc/devops-diploma-2025/compare/v1.4.0...v1.5.0) (2025-08-03)
+
+### Features
+
+* semantic release ([a421cae](https://github.com/javieroc/devops-diploma-2025/commit/a421caeef364a0b913858ca061756c428153a724))
+
 ## [1.4.0](https://github.com/javieroc/devops-diploma-2025/compare/v1.3.0...v1.4.0) (2025-08-03)
 
 ### Features
