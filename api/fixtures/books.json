@@ -1,0 +1,222 @@
+[
+  {
+    "model": "api.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Pragmatic Programmer",
+      "author": "Andrew Hunt",
+      "isbn": "9780135957059",
+      "published_date": "1999-10-20",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 2,
+    "fields": {
+      "title": "Clean Code",
+      "author": "Robert C. Martin",
+      "isbn": "9780132350884",
+      "published_date": "2008-08-01",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 3,
+    "fields": {
+      "title": "Design Patterns",
+      "author": "Erich Gamma",
+      "isbn": "9780201633610",
+      "published_date": "1994-10-21",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 4,
+    "fields": {
+      "title": "The Mythical Man-Month",
+      "author": "Frederick Brooks",
+      "isbn": "9780201835953",
+      "published_date": "1975-01-01",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 5,
+    "fields": {
+      "title": "Refactoring",
+      "author": "Martin Fowler",
+      "isbn": "9780134757599",
+      "published_date": "2018-11-16",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 6,
+    "fields": {
+      "title": "Structure and Interpretation of Computer Programs",
+      "author": "Harold Abelson",
+      "isbn": "9780262510875",
+      "published_date": "1985-07-25",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 7,
+    "fields": {
+      "title": "Introduction to Algorithms",
+      "author": "Thomas H. Cormen",
+      "isbn": "9780262033848",
+      "published_date": "1990-01-01",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 8,
+    "fields": {
+      "title": "Code Complete",
+      "author": "Steve McConnell",
+      "isbn": "9780735619678",
+      "published_date": "2004-06-09",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 9,
+    "fields": {
+      "title": "The Clean Coder",
+      "author": "Robert C. Martin",
+      "isbn": "9780137081073",
+      "published_date": "2011-05-13",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 10,
+    "fields": {
+      "title": "Working Effectively with Legacy Code",
+      "author": "Michael Feathers",
+      "isbn": "9780131177055",
+      "published_date": "2004-09-02",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 11,
+    "fields": {
+      "title": "Head First Design Patterns",
+      "author": "Eric Freeman",
+      "isbn": "9780596007126",
+      "published_date": "2004-10-28",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 12,
+    "fields": {
+      "title": "Cracking the Coding Interview",
+      "author": "Gayle Laakmann McDowell",
+      "isbn": "9780984782857",
+      "published_date": "2015-07-01",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 13,
+    "fields": {
+      "title": "Peopleware",
+      "author": "Tom DeMarco",
+      "isbn": "9780321934116",
+      "published_date": "2013-07-27",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 14,
+    "fields": {
+      "title": "The Phoenix Project",
+      "author": "Gene Kim",
+      "isbn": "9780988262591",
+      "published_date": "2013-01-10",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 15,
+    "fields": {
+      "title": "Continuous Delivery",
+      "author": "Jez Humble",
+      "isbn": "9780321601919",
+      "published_date": "2010-07-27",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 16,
+    "fields": {
+      "title": "Site Reliability Engineering",
+      "author": "Betsy Beyer",
+      "isbn": "9781491929124",
+      "published_date": "2016-04-16",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 17,
+    "fields": {
+      "title": "Designing Data-Intensive Applications",
+      "author": "Martin Kleppmann",
+      "isbn": "9781449373320",
+      "published_date": "2017-03-21",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 18,
+    "fields": {
+      "title": "You Don't Know JS: Up & Going",
+      "author": "Kyle Simpson",
+      "isbn": "9781491924426",
+      "published_date": "2015-03-27",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 19,
+    "fields": {
+      "title": "Eloquent JavaScript",
+      "author": "Marijn Haverbeke",
+      "isbn": "9781593279509",
+      "published_date": "2018-12-04",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  },
+  {
+    "model": "api.book",
+    "pk": 20,
+    "fields": {
+      "title": "Python Crash Course",
+      "author": "Eric Matthes",
+      "isbn": "9781593276034",
+      "published_date": "2015-11-30",
+      "created_at": "2025-08-02T20:56:15.237834"
+    }
+  }
+]
