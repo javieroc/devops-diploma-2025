@@ -69,6 +69,9 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install semantic-release plugins
+        run: npm install --save-dev conventional-changelog-conventionalcommits @semantic-release/changelog @semantic-release/git @semantic-release/github
+
       - name: Run semantic-release
         id: semantic-release
         uses: cycjimmy/semantic-release-action@v4
