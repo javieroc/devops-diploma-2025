@@ -1,0 +1,6 @@
+apiVersion: v2
+name: books-catalog-chart
+description: A Helm chart to deploy Bools Catalog API.
+type: application
+version: 1.0.0
+appVersion: "1.16.0"
