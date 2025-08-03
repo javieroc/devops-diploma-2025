@@ -96,6 +96,14 @@ jobs:
       attestations: write
       id-token: write
     steps:
+      - name: Show condition values
+        if: always()
+        run: |
+          echo "ref_name: ${{ github.ref_name }}"
+          echo "semantic-release outputs:"
+          echo "  new-release-published: ${{ needs.semantic-release.outputs.new-release-published }}"
+          echo "  new-release-version: ${{ needs.semantic-release.outputs.new-release-version }}"
+
       - name: Checkout code
         uses: actions/checkout@v4
 
