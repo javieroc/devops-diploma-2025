@@ -1,3 +1,9 @@
+## [1.2.0](https://github.com/javieroc/devops-diploma-2025/compare/v1.1.0...v1.2.0) (2025-08-03)
+
+### Features
+
+* testing release ([7ea8d47](https://github.com/javieroc/devops-diploma-2025/commit/7ea8d477b29311507e012a3a8cc5331bb3cda167))
+
 ## [1.1.0](https://github.com/javieroc/devops-diploma-2025/compare/v1.0.0...v1.1.0) (2025-08-03)
 
 ### Features
