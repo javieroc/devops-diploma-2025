@@ -37,3 +37,11 @@ spec:
                 secretKeyRef:
                   name: {{ .Values.loadSecretFrom }}
                   key: password
+          ports:
+            - name: http
+              containerPort: 8000
+              protocol: TCP
+          readinessProbe:
+            httpGet:
+              path: /api/
+              port: http
