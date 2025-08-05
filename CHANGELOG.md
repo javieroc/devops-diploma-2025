@@ -1,3 +1,9 @@
+## [1.6.2](https://github.com/javieroc/devops-diploma-2025/compare/v1.6.1...v1.6.2) (2025-08-05)
+
+### Bug Fixes
+
+* update test endpoint ([60a6321](https://github.com/javieroc/devops-diploma-2025/commit/60a63213d87e1997909f062a5d395632f618b5a7))
+
 ## [1.6.1](https://github.com/javieroc/devops-diploma-2025/compare/v1.6.0...v1.6.1) (2025-08-05)
 
 ### Bug Fixes
