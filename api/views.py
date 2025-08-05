@@ -18,7 +18,7 @@ class TestView(APIView):
     def get(self, request, *args, **kwargs):
         return Response({
             "status": "ok",
-            "message": "Simple test"
+            "message": "Simple test update"
         })
 
 test_view = TestView.as_view()
