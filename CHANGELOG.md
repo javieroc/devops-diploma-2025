@@ -1,3 +1,9 @@
+## [1.5.1](https://github.com/javieroc/devops-diploma-2025/compare/v1.5.0...v1.5.1) (2025-08-05)
+
+### Bug Fixes
+
+* health check ([58ec1fa](https://github.com/javieroc/devops-diploma-2025/commit/58ec1faaed45bfbd969880e81e2732f16a94e2fb))
+
 ## [1.5.0](https://github.com/javieroc/devops-diploma-2025/compare/v1.4.0...v1.5.0) (2025-08-03)
 
 ### Features
