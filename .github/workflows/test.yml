@@ -145,7 +145,7 @@ jobs:
         - name: Update Image Version in values.yaml
           uses: fjogeleit/yaml-update-action@main
           with:
-            valueFile: 'environments/production/values.yaml' # The path to your values file
+            valueFile: 'envs/prod/values.yaml' # The path to your values file
             propertyPath: 'image.tag'
             value: ${{ needs.semantic-release.outputs.new-release-version }}
             branch: main
