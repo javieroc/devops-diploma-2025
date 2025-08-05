@@ -14,14 +14,14 @@ class HealthView(APIView):
 health_view = HealthView.as_view()
 
 
-class AuthorView(APIView):
+class TestView(APIView):
     def get(self, request, *args, **kwargs):
         return Response({
             "status": "ok",
-            "message": "List of authors will be implemented soon"
+            "message": "Simple test"
         })
 
-author_view = AuthorView.as_view()
+test_view = TestView.as_view()
 
 
 #
