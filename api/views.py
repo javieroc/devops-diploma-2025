@@ -14,6 +14,16 @@ class HealthView(APIView):
 health_view = HealthView.as_view()
 
 
+class AuthorView(APIView):
+    def get(self, request, *args, **kwargs):
+        return Response({
+            "status": "ok",
+            "message": "List of authors will be implemented soon"
+        })
+
+author_view = AuthorView.as_view()
+
+
 #
 # /api/books - All methods (GET, POST)
 #
