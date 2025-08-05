@@ -1,3 +1,9 @@
+## [1.5.2](https://github.com/javieroc/devops-diploma-2025/compare/v1.5.1...v1.5.2) (2025-08-05)
+
+### Bug Fixes
+
+* GH actions ([e040820](https://github.com/javieroc/devops-diploma-2025/commit/e0408207b554eb2f768c6697f187a20f953385a4))
+
 ## [1.5.1](https://github.com/javieroc/devops-diploma-2025/compare/v1.5.0...v1.5.1) (2025-08-05)
 
 ### Bug Fixes
