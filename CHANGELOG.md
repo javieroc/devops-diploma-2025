@@ -1,3 +1,9 @@
+## [1.5.3](https://github.com/javieroc/devops-diploma-2025/compare/v1.5.2...v1.5.3) (2025-08-05)
+
+### Bug Fixes
+
+* readiness probe ([a27bcb1](https://github.com/javieroc/devops-diploma-2025/commit/a27bcb1424ff0b74151ad81782ef49dd0140db6f))
+
 ## [1.5.2](https://github.com/javieroc/devops-diploma-2025/compare/v1.5.1...v1.5.2) (2025-08-05)
 
 ### Bug Fixes
