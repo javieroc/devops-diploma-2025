@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{titling}
+
+\geometry{a4paper, margin=1in}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+}
+
+\title{
+    \vspace{2cm}
+    \textbf{Capstone Project Report: Book Catalog API with CI/CD Pipeline}
+    \vspace{1.5cm}
+}
+\author{Javier Alfonso Ocampo \\ Student Number: 2024328 \\ \\url{https://github.com/javieroc/devops-diploma-2025}}
+\date{Lecturer: Esteban Garcia \\ \today}
+
+
+\begin{document}
+
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\setcounter{page}{1}
+
+\section{Project Summary}
+
+This report outlines the development and deployment of the Book Catalog API, a capstone project for the DevOps Diploma 2025. The project showcases a complete DevOps workflow, from initial API development to automated deployment. Key deliverables include a RESTful API built with \textbf{Django}, containerization with \textbf{Docker}, and a full CI/CD pipeline using \textbf{GitHub Actions} for automated testing, versioning, and deployment to a \textbf{Kubernetes} cluster via \textbf{Helm}. The result is a scalable, maintainable, and production-ready application that demonstrates proficiency in modern software development and deployment practices.
+
+\section{API Architecture and Endpoints}
+
+The core of the project is a RESTful API built with Python, utilizing the \textbf{Django} framework and the \textbf{Django REST Framework (DRF)} to provide a robust and scalable backend service. The API is designed to manage a collection of books, offering a complete set of CRUD (Create, Read, Update, Delete) operations.
+
+The data model, defined in \texttt{api/models.py}, consists of a single \texttt{Book} entity with the following attributes: \texttt{title}, \texttt{author}, \texttt{isbn}, and \texttt{published_date}. Data validation and serialization are handled by the \texttt{BookSerializer} in \texttt{api/serializers.py}, which ensures that all data entering and leaving the API conforms to the expected format.
+
+The API exposes the following endpoints:
+\begin{description}
+    \item[\texttt{GET /api/health/}] A health check endpoint that returns a status of ``ok'' to indicate the API is running.
+    \item[\texttt{GET /api/books/}] Retrieves a list of all books in the catalog.
+    \item[\texttt{POST /api/books/}] Creates a new book record. The request body must contain the book's title, author, ISBN, and publication date.
+    \item[\texttt{GET /api/books/\{id\}/}] Retrieves a single book by its unique identifier.
+    \item[\texttt{PUT /api/books/\{id\}/}] Updates the details of an existing book.
+    \item[\texttt{DELETE /api/books/\{id\}/}] Deletes a book from the catalog.
+\end{description}
+
+The view logic, located in \texttt{api/views.py}, is implemented using DRF's class-based \texttt{APIView} to handle incoming HTTP requests and provide the appropriate responses, including standard HTTP status codes for success and error conditions. This clean and well-structured implementation provides a solid foundation for the application.
+
+\section{Workflow}
+
+\subsection{End-to-End Workflow: From Pull Request to Kubernetes Deployment}
+
+The project implements a fully automated end-to-end workflow that takes a developer's contribution from a pull request all the way to a production deployment in a \textbf{Kubernetes} cluster. This process is designed to be efficient, reliable, and secure, leveraging the power of \textbf{GitHub Actions} for continuous integration and continuous delivery.
+
+The workflow begins when a developer creates a pull request with new code changes. This action automatically triggers the \textbf{GitHub Actions} pipeline defined in \texttt{.github/workflows/test.yml}. The pipeline first executes a series of validation jobs, including running unit tests, checking for database migration consistency, and linting the code to ensure it adheres to project standards.
+
+Once the pull request is reviewed and all checks have passed, it can be merged into the \texttt{main} branch. The merge event triggers the next stage of the pipeline. The \texttt{semantic-release} job analyzes the commit messages to determine the next appropriate version number, automatically generates a \texttt{CHANGELOG.md}, and creates a new release tag in the Git repository.
+
+The creation of a new release triggers the final stage of the pipeline: the \texttt{build-docker-image} job. This job builds a new \textbf{Docker} image of the application, tags it with the newly created version number, and pushes it to the GitHub Container Registry (GHCR).
+
+At this point, the new version of the application is containerized and ready for deployment. The deployment to the \textbf{Kubernetes} cluster is managed by the \textbf{Helm} chart located in the \texttt{books-catalog-chart} directory. To deploy the new version, an operator would update the \texttt{image.tag} value in the chart's \texttt{values.yaml} file to the new version number and apply the changes using the \texttt{helm upgrade} command. This declarative approach ensures that the deployment is predictable and repeatable. For a fully automated CD pipeline, an additional step could be added to the \textbf{GitHub Actions} workflow to automatically trigger the \textbf{Helm} deployment upon a successful image push to GHCR, for instance by using a tool like Argo CD.
+
+\subsection{Testing}
+
+A key requirement of the project was to establish a solid testing foundation. The repository is configured to use the \texttt{pytest-django} framework, as specified in the \texttt{pyproject.toml} file. The project includes a comprehensive test suite in \texttt{api/tests/test_views.py}, which covers the core functionality of the API. The tests are implemented using \textbf{Django}'s \texttt{APITestCase} and are divided into classes such as \texttt{BookViewTest}, \texttt{BookDetailViewTest}, and \texttt{HealthViewTest}. These tests validate the behavior of the API endpoints, including successful responses (2xx status codes), error handling for non-existent resources (404 status codes), and data manipulation (create, update, delete). The CI/CD pipeline is configured to execute these tests automatically on every push and pull request, ensuring that new changes do not introduce regressions and maintaining the application's reliability. The project's dependencies are managed with \texttt{uv}, which is used to install and manage the required packages for both the application and the testing environment.
+
+\subsection{Version Control}
+
+The project adheres to modern version control standards by using \textbf{Git} for source code management and hosting the repository on \textbf{GitHub}. A significant aspect of the version control strategy is the adoption of the Conventional Commits specification. This is enforced through the \texttt{semantic-release} package integrated into the CI/CD pipeline, which automates versioning and changelog generation based on the commit messages. This practice ensures a clean, descriptive, and machine-readable commit history, which greatly improves project maintainability and simplifies the release process.
+
+\subsection{Containerization}
+
+The application is fully containerized using \textbf{Docker}, which facilitates consistent development and deployment environments. The \texttt{Dockerfile} is optimized for production, employing a multi-stage build to create a lean and secure final image. The project's dependencies are managed with \texttt{uv}, which is used within the \texttt{Dockerfile} to install the required packages in a separate layer, optimizing the build process. For local development, a \texttt{docker-compose.yml} file is provided to orchestrate the \textbf{Django} application and a PostgreSQL database service. This allows developers to spin up the entire application stack with a single command, streamlining the development workflow and eliminating environment-specific issues.
+
+\subsection{Kubernetes Deployment}
+
+For deployment, the project utilizes \textbf{Kubernetes} and \textbf{Helm}, embracing Infrastructure as Code (IaC) principles. A comprehensive \textbf{Helm} chart is located in the \texttt{books-catalog-chart} directory, which contains all the necessary templates to deploy the application, including a \texttt{Deployment}, a \texttt{Service}, and configurations for environment variables. The \texttt{values.yaml} file provides a flexible way to manage deployment configurations, allowing for easy customization across different environments. The deployment process is well-documented in the \texttt{README.md}, including instructions for setting up the necessary Kubernetes secrets and installing the \textbf{Helm} chart. This approach provides a repeatable, reliable, and scalable method for deploying the Book Catalog API to any \textbf{Kubernetes} cluster.
+
+\section{Documentation}
+
+The project is supported by high-quality documentation in the \texttt{README.md} file. This document serves as a central hub of information, providing a clear project overview, detailed API usage examples with \texttt{cURL} commands, and step-by-step instructions for setting up the local development environment. Furthermore, it offers a thorough explanation of the CI/CD pipeline and the \textbf{Kubernetes} deployment process, making the project accessible to other developers and stakeholders. This commitment to documentation is crucial for the long-term success and maintainability of the project.
+
+\section{Lessons Learned}
+
+This project provided several valuable learning experiences:
+\begin{itemize}
+    \item The integration of \texttt{semantic-release} highlighted the importance of a disciplined approach to commit messaging and its impact on automated versioning and changelog generation.
+    \item The process of configuring the \textbf{Helm} chart and \textbf{Kubernetes} manifests reinforced the benefits of Infrastructure as Code (IaC) for creating reproducible and scalable deployments.
+    \item The implementation of the end-to-end CI/CD pipeline demonstrated the power of automation in reducing manual effort, improving reliability, and accelerating the delivery of new features.
+    \item The project underscored the importance of establishing clear merging rules and branch protection policies in \textbf{GitHub} to maintain code quality and prevent accidental disruptions to the main branch.
+    \item A key takeaway was the distinction between local development and production environments, with \textbf{Docker Compose} proving to be an excellent tool for local development, while \textbf{Kubernetes} and \textbf{Helm} are better suited for managing production deployments at scale.
+\end{itemize}
+
+\section{Conclusion}
+
+This project successfully demonstrates the practical application of modern DevOps principles to deliver a robust and scalable Book Catalog API. Through the implementation of a comprehensive CI/CD pipeline, containerization, and automated deployment to Kubernetes, the project achieves a high degree of automation and reliability. The key takeaways from this endeavor, particularly in the areas of automated testing, version control, and Infrastructure as Code, provide a solid foundation for future software development projects.
+
+\end{document}
